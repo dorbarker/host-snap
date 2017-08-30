@@ -155,7 +155,7 @@ def snap(masked: Path, seed_size: int, cores: int) -> None:
            '-s', seed_size, '-t{}'.format(cores))
 
     snap_cmd = [str(x) for x in cmd]
-    print(snap_cmd)
+
     try:
         subprocess.run(snap_cmd, check=True)
 
