@@ -151,7 +151,8 @@ def host_mask(host_path: Path, length_threshold: int, max_evalue: float,
 
 def snap(masked: Path, seed_size: int, cores: int) -> None:
 
-    cmd = ('snap-aligner', 'index', masked, masked.parent,
+    out = (masked.parent / masked.stem).with_suffix('.snap_index')
+    cmd = ('snap-aligner', 'index', masked, out,
            '-s', seed_size, '-t{}'.format(cores))
 
     snap_cmd = [str(x) for x in cmd]
@@ -179,5 +180,6 @@ def main():
                        args.identity, blast_results)
 
     snap(masked, args.snap_seed, args.cores)
+
 if __name__ == '__main__':
     main()
