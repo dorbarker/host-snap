@@ -6,7 +6,7 @@ desc = '''Removes specific viral sequences from a
           host genome and generates a SNAP index'''
 
 setup(
-        name='host-snap',
+        name='host_snap',
         version='0.1',
         packages=find_packages(),
         install_requires=['biopython', 'pandas', 'numpy'],
